@@ -11,8 +11,8 @@ class AuthBackground extends StatelessWidget {
       height: double.infinity,
       child: Stack(
         children: [
-        _PurpleBox(), 
-        _HederIcon(), 
+        const _PurpleBox(), 
+        const _HederIcon(), 
         child
         ],
       ),
@@ -89,7 +89,7 @@ class _Bubble extends StatelessWidget {
       height: 100,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(100),
-        color: Color.fromARGB(168, 211, 208, 208)
+        color: const Color.fromARGB(168, 211, 208, 208)
       ),
     );
   }
