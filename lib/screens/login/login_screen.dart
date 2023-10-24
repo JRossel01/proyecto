@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto/components/components.dart';
 import 'package:proyecto/providers/providers.dart';
+import 'package:proyecto/screens/login/home_screen.dart';
 import 'package:proyecto/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
@@ -78,9 +79,8 @@ class _LoginForm extends StatelessWidget {
               elevation: 0,
               color: const Color.fromARGB(255, 136, 11, 204),
               child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 80, vertical: 15
-                ),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
                 child: Text(
                   loginForm.isLoading ? 'Esperar' : 'Ingresar',
                   style: const TextStyle(color: Colors.white),
@@ -88,9 +88,39 @@ class _LoginForm extends StatelessWidget {
               ),
               onPressed: () {
                 print('Presionado');
+                // print(loginForm.email);
+                // print(loginForm.password);
+                // return showDialog(
+                //   context: context,
+                //   builder: (_) => const _DialogoAlerta(mensaje: "mensaje de prueba"),
+                // );
+                bool validate = true;
+
+                if (validate) {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomeScreen()));
+                } else {
+                  print('falso');
+                }
               })
         ],
       ),
+    );
+  }
+}
+
+class _DialogoAlerta extends StatelessWidget {
+  final String mensaje;
+
+  const _DialogoAlerta({required this.mensaje});
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: const Text('Error'),
+      content: Text(mensaje),
     );
   }
 }

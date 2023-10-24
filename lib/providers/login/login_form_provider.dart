@@ -10,7 +10,7 @@ class loginfromprovider extends ChangeNotifier {
 
   bool get isLoading => _isLoading;
 
-  set isloading(bool value) {
+  set isLoading(bool value) {
     _isLoading = value;
     notifyListeners();
   }
